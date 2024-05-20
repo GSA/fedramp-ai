@@ -1,14 +1,14 @@
 ---
 # For reference on model card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
 # Doc / guide: https://huggingface.co/docs/hub/model-cards
-{}
+{{ card_data }}
 ---
 
-# Model Card for Model ID
+# Model Card for {{ model_id | default("Model ID", true) }}
 
 <!-- Provide a quick summary of what the model is/does. -->
 
-This modelcard aims to be a base template for new models. It has been generated using [this raw template](https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/modelcard_template.md?plain=1).   It has been modified to request additional items to support FedRAMPs analysis of emerging technologies for artificial intelligence.
+{{ model_summary | default("", true) }}
 
 ## Model Details
 
@@ -16,117 +16,90 @@ This modelcard aims to be a base template for new models. It has been generated 
 
 <!-- Provide a longer summary of what this model is. -->
 
+{{ model_description | default("", true) }}
 
-
-- **Developed by:** [More Information Needed]
-- **Funded by [optional]:** [More Information Needed]
-- **Shared by [optional]:** [More Information Needed]
-- **Model type:** [More Information Needed]
-- **Language(s) (NLP):** [More Information Needed]
-- **License:** [More Information Needed]
-- **Finetuned from model [optional]:** [More Information Needed]
+- **Developed by:** {{ developers | default("[More Information Needed]", true)}}
+- **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
+- **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
+- **Model type:** {{ model_type | default("[More Information Needed]", true)}}
+- **Language(s) (NLP):** {{ language | default("[More Information Needed]", true)}}
+- **License:** {{ license | default("[More Information Needed]", true)}}
+- **Finetuned from model [optional]:** {{ base_model | default("[More Information Needed]", true)}}
 
 ### Model Sources [optional]
 
 <!-- Provide the basic links for the model. -->
 
-- **Repository:** [More Information Needed]
-- **Paper [optional]:** [More Information Needed]
-- **Demo [optional]:** [More Information Needed]
+- **Repository:** {{ repo | default("[More Information Needed]", true)}}
+- **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
+- **Demo [optional]:** {{ demo | default("[More Information Needed]", true)}}
 
-### FedRAMP - Model Emerging Technologies capabilities [FedRAMP required]
+## Uses
 
-<!-- Describe how the CSO provides the defined capabilities in the Executive Order for Artificial Intelligence and how the model meets these descriptions. -->
-
-- **Chat interfaces:** [Not Applicable | More Information Needed]
-- **code generator or debugging tools:** [Not Applicable | More Information Needed]
-- **image generator:** [Not Applicable | More Information Needed]
-- **associated APIs:** [Not Applicable | More Information Needed]
-- **other capabilities:** [Not Applicable | More Information Needed]
-
-## FedRAMP - Intended Uses 
-
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. FedRAMP requires these items to be described.-->
+<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
 
 ### Direct Use
 
 <!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
 
-[More Information Needed]
+{{ direct_use | default("[More Information Needed]", true)}}
 
 ### Downstream Use [optional]
 
 <!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
 
-[More Information Needed]
+{{ downstream_use | default("[More Information Needed]", true)}}
 
 ### Out-of-Scope Use
 
 <!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
 
-[More Information Needed]
+{{ out_of_scope_use | default("[More Information Needed]", true)}}
 
-## FedRAMP - Bias, Risks, and Limitations
+## Bias, Risks, and Limitations
 
-<!-- This section is meant to convey both technical and sociotechnical limitations. This section is required by FedRAMP to be presented to the federal government. -->
+<!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
-[More Information Needed]
-
-### FedRAMP - Security [optional]
-
-<!-- This section is meant to describe the technical security that has been applied, and any security controls or analysis that has been performed to keep the product from being manipulated by adversaries.  It should also describe any penetration testing that has occurred and the outcome or vulnerabilities of that testing. -->
-
-More information is necessary to describe the security of the model.
+{{ bias_risks_limitations | default("[More Information Needed]", true)}}
 
 ### Recommendations
 
 <!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
-Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
+{{ bias_recommendations | default("Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.", true)}}
 
 ## How to Get Started with the Model
 
 Use the code below to get started with the model.
 
-[More Information Needed]
+{{ get_started_code | default("[More Information Needed]", true)}}
 
 ## Training Details
-
-<!-- This should describe the details of the training process and procedures -->
-
-### FedRAMP Training Specifics
-
-<!-- This should include the Freshness of the data in YYYY/MM format where the data includes the year and month of the most recent data in the model.  The trains on government data identifies whether the model or offering continues to learn from, process, and store, data and inputs that are submitted to the offering.  -->
-
-- **Data Freshness:** [Date: YYYY/MM | More Information Needed]
-- **Trains on Government Data:** [Y | N ]
-
-[More Information Needed]
 
 ### Training Data
 
 <!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
 
-[More Information Needed]
+{{ training_data | default("[More Information Needed]", true)}}
 
-### Training Procedure
+### Training Procedure [optional]
 
 <!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
 
 #### Preprocessing [optional]
 
-[More Information Needed]
+{{ preprocessing | default("[More Information Needed]", true)}}
 
 
-#### Training Hyperparameters
+#### Training Hyperparameters [optional]
 
-- **Training regime:** [More Information Needed] <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
+- **Training regime:** {{ training_regime | default("[More Information Needed]", true)}} <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
 
 #### Speeds, Sizes, Times [optional]
 
 <!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
 
-[More Information Needed]
+{{ speeds_sizes_times | default("[More Information Needed]", true)}}
 
 ## Evaluation
 
@@ -138,63 +111,63 @@ Use the code below to get started with the model.
 
 <!-- This should link to a Dataset Card if possible. -->
 
-[More Information Needed]
+{{ testing_data | default("[More Information Needed]", true)}}
 
 #### Factors
 
 <!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
 
-[More Information Needed]
+{{ testing_factors | default("[More Information Needed]", true)}}
 
 #### Metrics
 
 <!-- These are the evaluation metrics being used, ideally with a description of why. -->
 
-[More Information Needed]
+{{ testing_metrics | default("[More Information Needed]", true)}}
 
 ### Results
 
-[More Information Needed]
+{{ results | default("[More Information Needed]", true)}}
 
 #### Summary
 
-
+{{ results_summary | default("", true) }}
 
 ## Model Examination [optional]
 
 <!-- Relevant interpretability work for the model goes here -->
 
-[More Information Needed]
+{{ model_examination | default("[More Information Needed]", true)}}
 
-## Environmental Impact
+## Environmental Impact [optional]
 
 <!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
 
 Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
 
-- **Hardware Type:** [More Information Needed]
-- **Hours used:** [More Information Needed]
-- **Cloud Provider:** [More Information Needed]
-- **Compute Region:** [More Information Needed]
-- **Carbon Emitted:** [More Information Needed]
+- **Hardware Type:** {{ hardware_type | default("[More Information Needed]", true)}}
+- **Hours used:** {{ hours_used | default("[More Information Needed]", true)}}
+- **Cloud Provider:** {{ cloud_provider | default("[More Information Needed]", true)}}
+- **Compute Region:** {{ cloud_region | default("[More Information Needed]", true)}}
+- **Carbon Emitted:** {{ co2_emitted | default("[More Information Needed]", true)}}
 
 ## Technical Specifications [optional]
 
 ### Model Architecture and Objective
 
-[More Information Needed]
+{{ model_specs | default("[More Information Needed]", true)}}
 
 ### Compute Infrastructure
 
-[More Information Needed]
+{{ compute_infrastructure | default("[More Information Needed]", true)}}
 
 #### Hardware
 
-[More Information Needed]
+{{ hardware_requirements | default("[More Information Needed]", true)}}
 
 #### Software
 
-[More Information Needed]
+{{ software | default("[More Information Needed]", true)}}
 
 ## Citation [optional]
 
@@ -202,26 +175,26 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 **BibTeX:**
 
-[More Information Needed]
+{{ citation_bibtex | default("[More Information Needed]", true)}}
 
 **APA:**
 
-[More Information Needed]
+{{ citation_apa | default("[More Information Needed]", true)}}
 
 ## Glossary [optional]
 
 <!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
 
-[More Information Needed]
+{{ glossary | default("[More Information Needed]", true)}}
 
 ## More Information [optional]
 
-[More Information Needed]
+{{ more_information | default("[More Information Needed]", true)}}
 
 ## Model Card Authors [optional]
 
-[More Information Needed]
+{{ model_card_authors | default("[More Information Needed]", true)}}
 
 ## Model Card Contact
 
-[More Information Needed]
+{{ model_card_contact | default("[More Information Needed]", true)}}
