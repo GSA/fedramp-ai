@@ -8,7 +8,7 @@ In response to the President’s [Executive Order 14110 on Safe, Secure, and Tru
 
 Not all ETs will be prioritized. The initial ET prioritization list includes generative AI capabilities: chat interfaces, code-generation and debugging tools, and associated application programming interfaces (APIs), as well as prompt-based image generators, as required by Executive Order 14110.  
 
-As part of the application process for CSO's to be prioritized, the cloud service provider is requested to provide a publicly available model card that defines model details, uses, biases and risks, training details about the data, procedure, and parameters as well as evaluation factors, metrics, and results to include benchmarks used.
+As part of the application process for CSO's to be prioritized, the cloud service provider is required to provide a publicly available model card that defines model details, uses, biases and risks, training details about the data, procedure, and parameters as well as evaluation factors, metrics, and results to include benchmarks used.
 
 ## Model Template
-The FedRAMP model card template is derived from the [standard huggingface model card template](https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/modelcard_template.md) with additional fields identified as optional.   
+The FedRAMP model card template is derived from the [standard huggingface model card template](https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/modelcard_template.md) with additional fields identified as optional.   The FedRAMP model card template is [here](./modelcard-template.md)
