@@ -82,7 +82,7 @@ Use the code below to get started with the model.
 
 {{ training_data | default("[More Information Needed]", true)}}
 
-### Training Procedure [optional]
+### Training Procedure
 
 <!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
 
@@ -91,7 +91,7 @@ Use the code below to get started with the model.
 {{ preprocessing | default("[More Information Needed]", true)}}
 
 
-#### Training Hyperparameters [optional]
+#### Training Hyperparameters
 
 - **Training regime:** {{ training_regime | default("[More Information Needed]", true)}} <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
 
@@ -173,11 +173,11 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 <!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
 
-**BibTeX:**
+**BibTeX:** **[optional]**
 
 {{ citation_bibtex | default("[More Information Needed]", true)}}
 
-**APA:**
+**APA:** **[optional]**
 
 {{ citation_apa | default("[More Information Needed]", true)}}
 
