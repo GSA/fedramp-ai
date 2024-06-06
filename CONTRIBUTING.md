@@ -29,17 +29,18 @@ This project uses a typical GitHub fork and pull request [workflow](https://guid
 
 Project inquiries can be sent to [*info@fedramp.gov*](mailto:info@fedramp.gov).
 
-# Licenses and attribution
-The FedRAMP PMO has detailed [license information](./LICENSE.md) included here.
+## Licenses and attribution
 
-## This project is in the public domain
+### A few parts of this project are not in the public domain
 
-This project is in the worldwide public domain.
+For complete attribution and licensing information for parts of the project that are not in the public domain, see the [LICENSE]((https://github.com/GSA/fedramp-ai/blob/develop/LICENSE.md).
 
-The  model card template file in `modelcard-template.md` is licensed under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).  It is a derived work from this Hugging Face model card template
+### The rest of this project is in the public domain
 
-This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain](https://creativecommons.org/publicdomain/zero/1.0/) dedication.
+The rest of this project is in the worldwide [public domain](https://github.com/GSA/fedramp-ai/blob/develop/LICENSE.md#the-rest-of-this-project-is-in-the-worldwide-public-domain).
 
-## Contributions will be released into the public domain
+This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+
+### Contributions will be released into the public domain
 
 All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
