@@ -1,4 +1,4 @@
-<img src="https://github.com/GSA/fedramp-automation/raw/master/assets/FedRAMP_LOGO.png" alt="FedRAMP" width="76" height="94"><br />
+<img src="https://fedramp.gov/assets/img/fedramp-logo-vert.svg" alt="FedRAMP" width="76" height="94"><br />
 
 # Federal Risk and Authorization Management Program (FedRAMP) - Artificial Intelligence
 
